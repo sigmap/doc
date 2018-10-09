@@ -27,25 +27,23 @@ access your wallabag.
 
 ## On shared hosting
 
-We provide a package with all dependencies inside. The default
-configuration uses MySQL for the database. If you want to change these
-settings, please edit `app/config/parameters.yml`.
-
-With this package, wallabag doesn't check for mandatory extensions used
-in the application (theses checks are made during `composer install`
-when you have a dedicated web server, see above).
-
 Execute this command to download and extract the latest package:
 
 ```bash
 wget https://wllbg.org/latest-v2-package && tar xvf latest-v2-package
 ```
-
 You will find the [md5 hash of the latest package on our
 website](https://wallabag.org/en#download).
 
 Now, read the following documentation to create your virtual host, then
 access your wallabag.
+
+We provide a package with all dependencies inside. The default
+configuration uses MySQL for the database. 
+With this package, wallabag doesn't check for mandatory extensions used
+in the application (theses checks are made during `composer install`
+when you have a dedicated web server, see above).
+If you want to change these settings, please edit `app/config/parameters.yml`.
 
 To create a new user, please use the register form. Then, in order to have admin
 permissions, please run this query in your favorite DMBS (by replacing `1` with
@@ -54,6 +52,7 @@ the id for this new user):
 ```sql
 UPDATE wallabag_user SET roles = 'a:2:{i:0;s:9:"ROLE_USER";i:1;s:16:"ROLE_SUPER_ADMIN";}' where id = 1;
 ```
+
 
 ## Usage of wallabag.it
 
